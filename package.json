@@ -10,6 +10,6 @@
         "node-fetch": "^3.3.2"
     },
     "scripts": {
-        "start": "node index.js"
+        "start": "node test.js"
     }
 }
