@@ -24,6 +24,8 @@ const prox = createProxyMiddleware({
         delete req.headers['x-forwarded-proto'];
         delete req.headers['x-real-ip'];
         delete req.headers['forwarded'];
+        req.headers['referer'] = 'https://educationbluesky.com/';
+        req.headers['host'] = 'educationbluesky.com';
 
         // vercel
         delete req.headers['x-vercel-ip-country-region'];
