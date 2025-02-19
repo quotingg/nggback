@@ -30,7 +30,7 @@ const prox = createProxyMiddleware({
 })*/
 
 app.get("/", (_Request, Response) => {
-    Response.sendFile(path.join(__dirname, "apps/rawblax", "now.html"));
+    Response.sendFile(path.join(__dirname, "apps/uncube/10005", "now.html"));
 })
 app.use("/", prox('https://educationbluesky.com'));
 app.listen(5000, () => {
