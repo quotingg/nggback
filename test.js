@@ -42,6 +42,7 @@ const prox = createProxyMiddleware({
         delete req.headers['x-vercel-ip-longitude'];
         delete req.headers['x-vercel-proxy-signature'];
         delete req.headers['x-vercel-proxied-for'];
+        delete req.headers['x-vercel-forwarded-for'];
         console.log(req.headers);
 
         return targ;
