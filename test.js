@@ -20,9 +20,30 @@ const prox = createProxyMiddleware({
     logLevel: "debug",
     router: function (req) {
         delete req.headers['x-forwarded-for'];
+        delete req.headers['x-forwarded-host'];
         delete req.headers['x-forwarded-proto'];
         delete req.headers['x-real-ip'];
+        delete req.headers['forwarded'];
+
+        // vercel
+        delete req.headers['x-vercel-ip-country-region'];
+        delete req.headers['x-vercel-deployment-url'];
+        delete req.headers['x-vercel-ip-city'];
+        delete req.headers['x-vercel-ip-latitude'];
+        delete req.headers['x-vercel-ip-postal-code'];
+        delete req.headers['x-vercel-ip-timezone'];
+        delete req.headers['x-vercel-proxy-signature-ts'];
+        delete req.headers['x-vercel-id'];
+        delete req.headers['x-vercel-ip-as-number'];
+        delete req.headers['x-vercel-ja4-digest'];
+        delete req.headers['x-vercel-ip-country'];
+        delete req.headers['x-vercel-ip-continent'];
+        delete req.headers['x-vercel-internal-ingress-bucket'];
+        delete req.headers['x-vercel-ip-longitude'];
+        delete req.headers['x-vercel-proxy-signature'];
+        delete req.headers['x-vercel-proxied-for'];
         console.log(req.headers);
+
         return targ;
     }
 })
